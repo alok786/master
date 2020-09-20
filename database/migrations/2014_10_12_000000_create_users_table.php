@@ -26,10 +26,10 @@ class CreateUsersTable extends Migration
         Schema::create('user', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('hobbies');
+            $table->string('hobbies')->nullable();
             $table->bigInteger('phone')->unique();
             $table->enum('category',['devloper','designer','tester']);
-            $table->string('image');
+            $table->string('image')->nullable();;
             $table->rememberToken();
             $table->timestamps();
         });
